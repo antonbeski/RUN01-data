@@ -52,13 +52,12 @@ PAGE_HTML = """<!DOCTYPE html>
   a:hover{ color:var(--hi); }
 
   .ascii-title{
-    white-space:pre;
     font-family:"Roboto Mono",monospace;
-    font-size:11px;
-    line-height:1.15;
-    color:var(--fg);
+    font-weight:700;
+    font-size:34px;
+    letter-spacing:0.12em;
+    color:var(--hi);
     margin-bottom:6px;
-    overflow-x:auto;
   }
   .subtitle{ color:var(--dim); margin-bottom:20px; }
 
@@ -175,6 +174,10 @@ PAGE_HTML = """<!DOCTYPE html>
   }
 
   .divider{ border:none; border-top:1px solid var(--line); margin:26px 0; }
+  .divider-label{
+    font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--dim); font-size:12px; margin-bottom:14px;
+  }
 
   footer{ color:var(--dim); margin-top:30px; font-size:11px; }
 
@@ -185,9 +188,7 @@ PAGE_HTML = """<!DOCTYPE html>
 </head>
 <body>
 
-<div class="ascii-title">╦═╗╦ ╦╔╗╔╔═╗╦
-╠╦╝║ ║║║║║ ║║
-╩╚═╚═╝╝╚╝╚═╝╩╩</div>
+<div class="ascii-title">RUN01</div>
 <div class="subtitle">RUN01 — full stock data terminal, powered by finvizfinance</div>
 
 <div class="prompt-row">
@@ -383,7 +384,7 @@ async function runFetch(){
     if(includeMarket){
       setStatus(`▓▓▓ ${ticker} loaded. fetching market-wide extras... ▓▓▓`);
       outputEl.appendChild(el("hr", {class:"divider"}));
-      outputEl.appendChild(el("div", {class:"ascii-title", text:"MARKET-WIDE EXTRAS", style:""}));
+      outputEl.appendChild(el("div", {class:"divider-label", text:"MARKET-WIDE EXTRAS"}));
 
       const mres = await fetch(`${API_BASE}/api/market/${ticker}`);
       const mdata = await mres.json();
