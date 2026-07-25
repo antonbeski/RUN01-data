@@ -24,6 +24,9 @@ PAGE_HTML = """<!DOCTYPE html>
 <meta charset="UTF-8" />
 <title>RUN01</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#0a0a0a;
@@ -50,6 +53,7 @@ PAGE_HTML = """<!DOCTYPE html>
 
   .ascii-title{
     white-space:pre;
+    font-family:"Roboto Mono",monospace;
     font-size:11px;
     line-height:1.15;
     color:var(--fg);
