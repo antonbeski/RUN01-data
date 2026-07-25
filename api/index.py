@@ -37,7 +37,8 @@ PAGE_HTML = """<!DOCTYPE html>
     margin:0; padding:0;
     background:var(--bg);
     color:var(--fg);
-    font-family:"JetBrains Mono","IBM Plex Mono","Courier New",monospace;
+    font-family:"SF Mono","SFMono-Regular","JetBrains Mono","IBM Plex Mono","Courier New",monospace;
+    font-weight:400;
     font-size:13px;
     line-height:1.5;
   }
